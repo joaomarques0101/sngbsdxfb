@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="João Marques">
+    <title>Portfólio - João Marques</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-content">
+            <h1>João Marques</h1>
+            <p>Desenvolvedor Full Stack</p>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mim">Sobre Mim</a></li>
+                    <li><a href="pagina1.html">Projetos</a></li>
+                    <li><a href="https://www.youtube.com/@joao_mqsh">YouTube</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+             
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+<!-- Carrossel de Fotos -->
+<div class="carrossel-container">
+    <div class="carrossel">
+        <img src="001.jpg" alt="Foto 1" class="carrossel-item">
+        <img src="002.jpg" alt="Foto 2" class="carrossel-item">
+        <img src="003.jpg" alt="Foto 3" class="carrossel-item">
+        <img src="4img.jpg" alt="Foto 4" class="carrossel-item">
+        <img src="002.jpg" alt="Foto 5" class="carrossel-item">
+        <img src="4img.jpg" alt="Foto 6" class="carrossel-item">
+    </div>
+</div>
+
+    <!-- Ícone de Chat -->
+    <div class="icone-chat" id="iconeChat" aria-label="Abrir chat">
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <!-- Mini Chat -->
+    <div class="mini-chat" id="miniChat">
+        <div class="chat-header">
+            <span>Mini Chat</span>
+            <button id="fecharChat">X</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <p><strong>IA:</strong> Olá, como posso te ajudar?</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Digite sua pergunta...">
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Ícone do boneco fixo no canto esquerdo -->
+    <div class="icone-boneco" id="iconeBoneco" aria-label="Menu do boneco">
+        <i class="fas fa-user"></i>
+        <div class="menu-boneco" id="menuBoneco">
+            <ul>
+              
+                <li><a href="pagina1.html">Projetos</a></li>
+                <li><a href="pagina3.html">Experiência</a></li>
+                <li><a href="contatos.html">Contato</a></li>
+              
+            </ul>
+            <button id="fecharMenu">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre-mim">
+        <div class="sobre-mim-container">
+            <img src="5.jpg" alt="Foto de João" id="foto-joao">
+            <div class="descricao">
+                <h2>Sobre mim</h2>
+                <p>Olá! Meu nome é João Marquês, sou um desenvolvedor fullstack apaixonado por criar soluções inovadoras através da programação. Meu maior passatempo é, sem dúvida, programar e explorar novas possibilidades tecnológicas. Atualmente, as linguagens que mais utilizo são JavaScript, essencial para interações dinâmicas nos programas que desenvolvo, e Python, que emprego em projetos de inteligência artificial e gerenciamento de banco de dados. Também sou um grande entusiasta do React, framework que me permite criar interfaces modernas e intuitivas. Ao longo da minha trajetória, já desenvolvi diversos projetos que refletem minha dedicação e amor por essa área</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Seções seguintes (Projetos, Experiência, Testemunhos, Blog, Contato) -->
+     <!-- Seção de Tópicos -->
+<section id="topicos" class="topicos-container">
+    <h2>Conheça</h2>
+
+    <div class="topico">
+        <h3>Tópico 1</h3>
+        <p>Meus processos e desenvolvimentos.</p>
+        <a href="pagina1.html" class="btn-topico">Ver Mais</a>
+    </div>
+
+    <div class="topico">
+        <h3>Tópico 2</h3>
+        <p>Quiz de interatividade.</p>
+        <a href="pagina2.html" class="btn-topico">Ver Mais</a>
+    </div>
+
+    <div class="topico">
+        <h3>Tópico 3</h3>
+        <p>Entre em contato.</p>
+        <a href="pagina3.html" class="btn-topico">Ver Mais</a>
+    </div>
+</section>
+
+
+    <script src="script.js"></script>
+    
+    <!-- Seção Dashboard com Gráficos -->
+    <section id="dashboard">
+        <div class="dashboard-container">
+            <h2>Dashboard de Qualificação</h2>
+            <div class="grafico" id="grafico1"></div>
+            <div class="grafico" id="grafico2"></div>
+            <div class="grafico" id="grafico3"></div>
+            <div class="grafico" id="grafico4"></div>
+            <div class="grafico" id="grafico5"></div>
+            <div class="grafico" id="grafico6"></div>
+        </div>
+    </section>
+</body>
+
+    <!-- Direitos Autorais -->
+    <footer>
+        <div class="copyright">
+            <p>© 2024 João Marques - Software Engineer | Todos os direitos reservados.</p>
+            <p>Criptografado por João Marques</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

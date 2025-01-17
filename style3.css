@@ -1,0 +1,318 @@
+/* Definições de Cores */
+:root {
+    --cinza-escuro: #2e2e2e; /* Cinza escuro */
+    --cinza-claro: #555555; /* Cinza claro */
+    --branco: #ffffff; /* Branco */
+    --destaque: #7f8c8d; /* Cor de destaque */
+    --color-bg-dark: #333333; /* Cor de fundo escura */
+    --color-bg-medium: #444444; /* Cor de fundo média */
+    --color-bg-light: #555555; /* Cor de fundo clara */
+    --color-accent: #7f8c8d; /* Cor de destaque (amarelo) */
+    --color-text-dark: #cccccc; /* Cor do texto escuro */
+    --color-text-light: #ffffff; /* Cor do texto claro */
+    --border-radius: 10px; /* Raio da borda */
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --padding-section: 30px; /* Padding padrão das seções */
+    --transition-speed: 0.3s; /* Velocidade de transição padrão */
+    --color-hover: #95a5a6; /* Cor para hover */
+}
+
+/* Estilo Global */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Container da página */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+/* Animação geral de FadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cinza-claro);
+    padding: 50px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--branco);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+}
+
+/* Seção de Informações do Produto */
+.product-info {
+    margin-top: 50px;
+    animation: fadeIn 2s ease-out;
+    text-align: center;
+}
+
+.product-info h2 {
+    font-size: 2rem;
+    color: var(--cinza-claro);
+    margin-bottom: 20px;
+}
+
+/* Layout Flexível para o Produto */
+.product-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-description {
+    flex: 1 1 40%;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+.product-image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    animation: fadeIn 2s ease-out;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Galeria de Imagens */
+.gallery {
+    margin-top: 50px;
+    animation: fadeIn 2s ease-out;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    color: var(--cinza-claro);
+    margin-bottom: 20px;
+}
+
+.gallery-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-images img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
+    animation: fadeIn 2s ease-out;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Depoimentos */
+.testimonials {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: var(--cinza-claro);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    animation: fadeIn 1.5s ease-out;
+    transform: translateY(20px);
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+
+.testimonial-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção Contato */
+.contato {
+    padding: var(--padding-section);
+    background-color: var(--color-bg-dark);
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.contato form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contato input, .contato textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-medium);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-out;
+}
+
+.contato button {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    animation: fadeIn 2s ease-out;
+}
+
+.contato button:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.1);
+}
+
+/* Rodapé */
+footer {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: var(--cinza-claro);
+    font-weight: 500;
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 768px) {
+    .product-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-description, 
+    .product-image {
+        flex: 1 1 100%;
+        margin: 0;
+    }
+
+    .product-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .gallery-images img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+    }
+
+    .testimonial {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .testimonial-image {
+        margin-bottom: 10px;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .product-info h2,
+    .gallery h2,
+    .testimonials h2 {
+        font-size: 1.5rem;
+    }
+
+    .product-description {
+        font-size: 1rem;
+    }
+
+    .contato {
+        padding: 20px;
+    }
+
+    .contato input, 
+    .contato textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 10px;
+    }
+}
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Avaliação de Habilidades Lógicas</title>
+    <link rel="stylesheet" href="styles2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script2.js" defer></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: #333; color: white; font-family: Arial, sans-serif;">
+    <div class="quiz-container">
+        <h1>Quiz - Avaliação de Habilidades Lógicas</h1>
+        <form id="quizForm">
+            <!-- Perguntas do Quiz -->
+            <div class="question" id="q1">
+                <h3>1. Qual o próximo número na sequência: 2, 4, 8, 16?</h3>
+                <input type="radio" name="q1" value="32" id="q1a" onchange="saveAnswer('q1', this.value)"> 32<br>
+                <input type="radio" name="q1" value="64" id="q1b" onchange="saveAnswer('q1', this.value)"> 64<br>
+                <div class="btn-container">
+                    <button type="button" onclick="nextQuestion(2)">Próxima Pergunta</button>
+                </div>
+            </div>
+            <div class="question hidden" id="q2">
+                <h3>2. Qual a soma de 15 + 27?</h3>
+                <input type="radio" name="q2" value="42" id="q2a" onchange="saveAnswer('q2', this.value)"> 42<br>
+                <input type="radio" name="q2" value="52" id="q2b" onchange="saveAnswer('q2', this.value)"> 52<br>
+                <div class="btn-container">
+                    <button type="button" onclick="nextQuestion(3)">Próxima Pergunta</button>
+                </div>
+            </div>
+            <div class="question hidden" id="q3">
+                <h3>3. Qual é o próximo número na sequência: 3, 6, 12, 24?</h3>
+                <input type="radio" name="q3" value="48" id="q3a" onchange="saveAnswer('q3', this.value)"> 48<br>
+                <input type="radio" name="q3" value="36" id="q3b" onchange="saveAnswer('q3', this.value)"> 36<br>
+                <div class="btn-container">
+                    <button type="button" onclick="nextQuestion(4)">Próxima Pergunta</button>
+                </div>
+            </div>
+            <div class="question hidden" id="q4">
+                <h3>4. Se você tem 10 maçãs e dá 3 para seu amigo, quantas maçãs ficam com você?</h3>
+                <input type="radio" name="q4" value="7" id="q4a" onchange="saveAnswer('q4', this.value)"> 7<br>
+                <input type="radio" name="q4" value="5" id="q4b" onchange="saveAnswer('q4', this.value)"> 5<br>
+                <div class="btn-container">
+                    <button type="button" onclick="nextQuestion(5)">Próxima Pergunta</button>
+                </div>
+            </div>
+            <div class="question hidden" id="q5">
+                <h3>5. Quanto é 20 dividido por 4?</h3>
+                <input type="radio" name="q5" value="4" id="q5a" onchange="saveAnswer('q5', this.value)"> 4<br>
+                <input type="radio" name="q5" value="5" id="q5b" onchange="saveAnswer('q5', this.value)"> 5<br>
+                <div class="btn-container">
+                    <button type="button" onclick="nextQuestion(6)">Próxima Pergunta</button>
+                </div>
+            </div>
+            <div class="question hidden" id="q6">
+                <h3>6. Qual é a capital do Brasil?</h3>
+                <input type="radio" name="q6" value="Brasília" id="q6a" onchange="saveAnswer('q6', this.value)"> Brasília<br>
+                <input type="radio" name="q6" value="Rio de Janeiro" id="q6b" onchange="saveAnswer('q6', this.value)"> Rio de Janeiro<br>
+                <div class="btn-container">
+                    <button type="button" onclick="nextQuestion(7)">Próxima Pergunta</button>
+                </div>
+            </div>
+            <div class="question hidden" id="q7">
+                <h3>7. Se um carro viaja a 80 km/h, quantos quilômetros ele percorre em 2 horas?</h3>
+                <input type="radio" name="q7" value="160" id="q7a" onchange="saveAnswer('q7', this.value)"> 160<br>
+                <input type="radio" name="q7" value="180" id="q7b" onchange="saveAnswer('q7', this.value)"> 180<br>
+                <div class="btn-container">
+                    <button type="button" onclick="nextQuestion(8)">Próxima Pergunta</button>
+                </div>
+            </div>
+            <div class="question hidden" id="q8">
+                <h3>8. O que é maior: 1/2 ou 2/3?</h3>
+                <input type="radio" name="q8" value="1/2" id="q8a" onchange="saveAnswer('q8', this.value)"> 1/2<br>
+                <input type="radio" name="q8" value="2/3" id="q8b" onchange="saveAnswer('q8', this.value)"> 2/3<br>
+                <div class="btn-container">
+                    <button type="button" onclick="calculateScore()">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Container do Dashboard -->
+    <div class="dashboard" id="dashboard" style="display: none;">
+        <h2>Dashboard de Habilidades</h2>
+        <div class="charts-container">
+            <canvas id="scoreChart"></canvas>
+            <canvas id="distributionChart"></canvas>
+            <canvas id="performanceChart"></canvas>
+            <canvas id="skillRadarChart"></canvas>
+            <canvas id="accuracyChart"></canvas>
+        </div>
+        <button onclick="resetQuiz()">Fazer o Quiz Novamente</button>
+    </div>
+</body>
+</html>

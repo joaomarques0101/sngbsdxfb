@@ -1,0 +1,570 @@
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3d3d3d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    font-size: 16px; /* Base em rem */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    padding: 0.625rem;
+    background: linear-gradient(135deg, #424242, #2a2a2a); /* Gradiente suave em tons de cinza */
+    border-bottom: 2px solid #555;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #bbb;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 1.25rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header nav ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1e1e1e;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+header nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+header nav ul li a:hover {
+    color: #80b3ff;
+}
+
+/* Seção Sobre Mim */
+.sobre-mim-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+#foto-joao {
+    width: 19.375rem;
+    height: 26.875rem;
+    object-fit: cover;
+}
+
+.descricao {
+    max-width: 31.25rem;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.5;
+}
+/* final */
+/* Estilo para o rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+footer .copyright p {
+    margin: 5px 0;
+}
+
+footer .copyright p:first-child {
+    font-weight: bold;
+}
+
+
+/* Carrossel de Fotos */
+.carrossel-container {
+    position: relative;
+    width: 80%;
+    margin: 1.25rem auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.4);
+}
+
+.carrossel {
+    display: flex;
+    gap: 1.25rem;
+    animation: rolar 15s linear infinite; /* Animação contínua */
+    transition: transform 0.5s ease-in-out; /* Para transições suaves quando controlado manualmente */
+}
+
+.carrossel-item {
+    width: 100%;
+    max-width: 18.75rem;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.4);
+}
+
+/* Carrossel de Fotos */
+.carrossel-container {
+    position: relative;
+    width: 80%;
+    margin: 1.25rem auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carrossel {
+    display: flex;
+    gap: 1.25rem;
+    animation: rolar 15s linear infinite; /* Animação contínua */
+    transition: transform 0.5s ease-in-out; /* Para transições suaves quando controlado manualmente */
+}
+
+.carrossel-item {
+    width: 100%;
+    max-width: 18.75rem;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.4);
+}
+
+/* Duplicando os itens do carrossel para um loop contínuo */
+.carrossel-duplicado {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.carrossel-duplicado .carrossel-item {
+    width: 100%;
+    max-width: 18.75rem;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.4);
+}
+
+/* Controles de navegação */
+.carrossel-prev,
+.carrossel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carrossel-prev {
+    left: 10px;
+}
+
+.carrossel-next {
+    right: 10px;
+}
+
+.carrossel-prev:hover,
+.carrossel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsividade para o carrossel */
+@media (max-width: 768px) {
+    .carrossel-container {
+        width: 100%;
+    }
+
+    .carrossel-item {
+        max-width: 15rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrossel-item {
+        max-width: 12rem;
+    }
+}
+
+/* Animação de rotação */
+@keyframes rolar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Transição contínua */
+}
+
+
+/* Ícone do boneco */
+.icone-boneco {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.875rem;
+    z-index: 10000;
+    transition: transform 0.5s ease, background-color 0.3s ease;
+}
+
+.icone-boneco:hover {
+    background-color: #8d8b8b;
+}
+
+/* Menu do boneco */
+.menu-boneco {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    width: 15.625rem;
+    height: 100%;
+    padding: 1.875rem 1.25rem;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 999;
+    overflow-y: auto;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.menu-boneco ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 3.125rem;
+}
+
+.menu-boneco ul li {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-boneco ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125rem;
+    transition: color 0.3s ease;
+}
+
+.menu-boneco ul li:hover {
+    background-color: white;
+    color: #333;
+}
+
+.menu-boneco ul li a:hover {
+    color: #8d8b8b;
+}
+
+.menu-boneco.aberto {
+    transform: translateX(0);
+}
+
+/* Botão de Fechar no menu */
+#fecharMenu {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background-color: #8d8b8b;
+    color: white;
+    border: none;
+    width: 5.625rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#fecharMenu:hover {
+    background-color: #d32f2f;
+}
+
+/* Ícone de Chat */
+.icone-chat {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 2.5rem;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.icone-chat:hover {
+    background-color: #8d8b8b;
+}
+
+/* Mini Chat */
+.mini-chat {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 350px;
+    background-color: #444;
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: slideIn 0.3s ease-out;
+    z-index: 9999;
+    max-width: 90%;
+}
+
+@media (max-width: 768px) {
+    .mini-chat {
+        width: 90%;
+        bottom: 80px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mini-chat {
+        width: 95%;
+        bottom: 60px;
+        right: 5px;
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
+
+.chat-header {
+    padding: 1rem;
+    background-color: #8d8b8b;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.chat-header span {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 15.625rem;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.chat-footer {
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.625rem;
+}
+
+.chat-footer input {
+    width: 75%;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    margin-right: 0.625rem;
+}
+
+.chat-footer input:focus {
+    border-color: #8d8b8b;
+    outline: none;
+}
+
+.chat-footer button {
+    background-color: #8d8b8b;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-footer button:hover {
+    background-color: #8d8b8b;
+}
+
+.chat-header span:hover {
+    color: #ff6347;
+}
+
+/* Função de digitação - Pontinhos */
+.typing-indicator {
+    color: #bbb;
+    font-size: 1.2rem;
+    margin-top: 0.625rem;
+    margin-bottom: 1.25rem;
+    animation: typing 1.5s steps(3, end) infinite;
+}
+
+@keyframes typing {
+    0% { content: ''; }
+    33% { content: '.'; }
+    66% { content: '..'; }
+    100% { content: '...'; }
+}
+
+/* Seção de Tópicos */
+.topicos-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.topicos-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.875rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.topico {
+    background-color: #444;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topico:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.3);
+}
+
+.topico h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.625rem;
+    color: #8d8b8b;
+}
+
+.topico p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Estilo dos botões */
+.btn-topico {
+    display: inline-block;
+    background-color: #8d8b8b;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.2rem;
+    border-radius: 0.3125rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-topico:hover {
+    background-color: #8d8b8b;
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 0.625rem;
+    }
+
+    .icone-boneco {
+        font-size: 1.75rem;
+        padding: 0.75rem;
+    }
+
+    .sobre-mim-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #foto-joao {
+        width: 15rem;
+        height: 20rem;
+    }
+
+    .descricao {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .topicos-container {
+        padding: 1.5rem 0;
+    }
+}
+
+

@@ -1,0 +1,212 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.quiz-container {
+    padding: 20px;
+    background-color: #444;
+    margin: 30px auto;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-container h1 {
+    text-align: center;
+    color: #28a745;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Classe que oculta as perguntas inicialmente */
+.hidden {
+    display: none;
+}
+
+
+.question {
+    margin-bottom: 20px;
+    background-color: #555;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.question h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #28a745;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #1e7e34;
+    transform: scale(0.95);
+}
+
+.dashboard {
+    margin: 30px auto;
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard h2 {
+    font-size: 1.8rem;
+    color: #17a2b8;
+    margin-bottom: 20px;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+canvas {
+    width: 400px;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #17a2b8;
+}
+
+/* Animação para os gráficos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+canvas {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Paleta de cores para gráficos */
+.chart-palette-line {
+    --chart-color: #ff6f61;
+    background: linear-gradient(45deg, #ff6f61, #ff9f80);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.chart-palette-column {
+    --chart-color: #6c5ce7;
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.chart-palette-sectors {
+    --chart-color: #00cec9;
+    background: linear-gradient(45deg, #00cec9, #81ecec);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.chart-palette-pictogram {
+    --chart-color: #fab1a0;
+    background: linear-gradient(45deg, #fab1a0, #ff7675);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.chart-palette-pizza {
+    --chart-color: #ffeaa7;
+    background: linear-gradient(45deg, #ffeaa7, #f9ca24);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Responsividade adicional */
+@media screen and (max-width: 768px) {
+    .quiz-container, .dashboard {
+        width: 90%;
+        padding: 15px;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .charts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Estilo extra para foco e acessibilidade */
+button:focus {
+    outline: 2px dashed #ffc107;
+    outline-offset: 2px;
+}
+
+input[type="radio"]:focus {
+    outline: 2px dashed #ffc107;
+    outline-offset: 2px;
+}
+
+/* Estilo decorativo adicional */
+.quiz-container::before {
+    content: "\1F9ED";
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dashboard::after {
+    content: "\1F4CA";
+    font-size: 2rem;
+    display: block;
+    margin-top: 20px;
+    color: #ffc107;
+}
+
